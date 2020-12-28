@@ -27,11 +27,22 @@ exports.run = (client, msg, args) => {
                 allow: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK', 'SEND_MESSAGES', 'READ_MESSAGE_HISTORY']
             }
         ]
-    }).catch((reason) => {
-        console.log(reason);
-        msg.reply(reason.message).then(
-            msg => msg.delete({timeout: 10000})
-        );
+    });
+
+    msg.guild.channels
+    .create(channelName, {
+        type: 'voice',
+        parent: category_id,
+        permissionOverwrites: [
+            {
+                id: msg.guild.me.id,
+                allow: ['VIEW_CHANNEL', 'MANAGE_CHANNELS', 'MANAGE_ROLES', 'CONNECT']
+            },
+            {
+                id: msg.author.id,
+                allow: ['VIEW_CHANNEL', 'CONNECT', 'SPEAK', 'SEND_MESSAGES', 'READ_MESSAGE_HISTORY']
+            }
+        ]
     });
 
 };

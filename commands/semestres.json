@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "1º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Criação de Páginas WEB",
+                "sigla": "CPW"
+            },
+            {
+                "nome": "Matemática Discreta",
+                "sigla": "MD"
+            },
+            {
+                "nome": "Circuitos Digitais",
+                "sigla": "CD"
+            },
+            {
+                "nome": "Língua Portuguesa",
+                "sigla": "LP"
+            },
+            {
+                "nome": "Introdução a História e Conceitos da Computação",
+                "sigla": "IHCC"
+            },
+            {
+                "nome": "Algoritmos 1",
+                "sigla": "A1"
+            }
+        ]
+    }
+]

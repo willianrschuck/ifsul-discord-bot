@@ -28,5 +28,219 @@
                 "sigla": "A1"
             }
         ]
+    },
+    {
+        "nome": "2º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Algoritmos 2",
+                "sigla": "A2"
+            },
+            {
+                "nome": "Arquitetura de Computadores 1",
+                "sigla": "AC1"
+            },
+            {
+                "nome": "Cálculo Diferencial e Integral 1",
+                "sigla": "CDI1"
+            },
+            {
+                "nome": "Comunicação em Língua Inglesa",
+                "sigla": "CLI"
+            },
+            {
+                "nome": "Fundamentos em Eletricidade e Eletrônica",
+                "sigla": "FEE"
+            },
+            {
+                "nome": "Sociedade e Tecnologia",
+                "sigla": "ST"
+            }
+        ]
+    },
+    {
+        "nome": "3º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Arquitetura de Computadores 2",
+                "sigla": "AC2"
+            },
+            {
+                "nome": "Banco de Dados 1",
+                "sigla": "MD"
+            },
+            {
+                "nome": "Cálculo Diferencial Integral 2",
+                "sigla": "CDI"
+            },
+            {
+                "nome": "Estrutura de Dados 1",
+                "sigla": "ED1"
+            },
+            {
+                "nome": "Leitura em Língua Inglesa",
+                "sigla": "LLI"
+            },
+            {
+                "nome": "Tecnologia de Orientação a Objetos",
+                "sigla": "TOO"
+            }
+        ]
+    },
+    {
+        "nome": "4º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Análise e Projeto de Sistemas",
+                "sigla": "APS"
+            },
+            {
+                "nome": "Banco de Dados 2",
+                "sigla": "BD2"
+            },
+            {
+                "nome": "Dados Semi-estruturados",
+                "sigla": "DSE"
+            },
+            {
+                "nome": "Estrutura de Dados 2",
+                "sigla": "ED2"
+            },
+            {
+                "nome": "Linguagem de Programação Orientada a Objetos",
+                "sigla": "LPOO"
+            },
+            {
+                "nome": "Redes de Computadores 1",
+                "sigla": "RC1"
+            },
+            {
+                "nome": "Sistemas Operacionais 1",
+                "sigla": "SO1"
+            }
+        ]
+    },
+    {
+        "nome": "5º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Álgebra Linear e Geometria Analítica",
+                "sigla": "ALGA"
+            },
+            {
+                "nome": "Estrutura de Dados 3",
+                "sigla": "ED3"
+            },
+            {
+                "nome": "Programação para Web",
+                "sigla": "PW"
+            },
+            {
+                "nome": "Redes de Computadores 2",
+                "sigla": "RC2"
+            },
+            {
+                "nome": "Sistemas Operacionais 2",
+                "sigla": "SO2"
+            },
+            {
+                "nome": "Teoria da Computação",
+                "sigla": "TO"
+            }
+        ]
+    },
+    {
+        "nome": "6º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Análise e Complexidade de Algoritmos",
+                "sigla": "ACA"
+            },
+            {
+                "nome": "Computação Gráfica",
+                "sigla": "CG"
+            },
+            {
+                "nome": "Inteligência Artificial",
+                "sigla": "IA"
+            },
+            {
+                "nome": "Metodologia de Pesquisa",
+                "sigla": "MP"
+            },
+            {
+                "nome": "Segurança de Redes de Computadores",
+                "sigla": "SRC"
+            },
+            {
+                "nome": "Sistemas Distribuídos 1",
+                "sigla": "SD1"
+            }
+        ]
+    },
+    {
+        "nome": "7º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Compiladores",
+                "sigla": "CPW"
+            },
+            {
+                "nome": "Engenharia de Software",
+                "sigla": "ES"
+            },
+            {
+                "nome": "Estatística e Probabilidade",
+                "sigla": "EP"
+            },
+            {
+                "nome": "Gestão Empresarial",
+                "sigla": "GE"
+            },
+            {
+                "nome": "Trabalho de Conclusão 1",
+                "sigla": "TCC1"
+            },
+            {
+                "nome": "Sistemas Distribuídos 2",
+                "sigla": "SD2"
+            }
+        ]
+    },
+    {
+        "nome": "8º Semestre",
+        "cor": "#aa2ad1",
+        "disciplinas": [
+            {
+                "nome": "Eletiva 1",
+                "sigla": "EL1"
+            },
+            {
+                "nome": "Eletiva 2",
+                "sigla": "EL2"
+            },
+            {
+                "nome": "Eletiva 3",
+                "sigla": "EL3"
+            },
+            {
+                "nome": "Empreendedorismo",
+                "sigla": "EMP"
+            },
+            {
+                "nome": "Trabalho de Conclusão 2",
+                "sigla": "TCC2"
+            },
+            {
+                "nome": "Serviços WEB",
+                "sigla": "SW"
+            }
+        ]
     }
 ]

@@ -5,7 +5,8 @@ exports.run = (client, msg, args) => {
     semestres.forEach(semestre => {
         
         msg.guild.channels
-        .create(semestre.nome, {type: "category"}).then(category => {
+        .create(semestre.nome, {type: "category"})
+        .then(category => {
 
             semestre.disciplinas.forEach(disciplina => {
 
@@ -14,39 +15,43 @@ exports.run = (client, msg, args) => {
                         name: disciplina.sigla,
                         color: semestre.cor
                     }
-                }).then(role => {
+                })
+                .then(role => {
 
-                    msg.guild.channels
-                    .create(disciplina.nome, {
-                        type: 'text',
-                        parent: category.id,
-                        permissionOverwrites: [
-                            {
-                                id: role,
-                                allow: ['VIEW_CHANNEL']
-                            }
-                        ]
-                    });
+                    msg.guild.channels.create(
+                        disciplina.nome, 
+                        {
+                            type: 'text',
+                            parent: category.id,
+                            permissionOverwrites: [
+                                {
+                                    id: role,
+                                    allow: ['VIEW_CHANNEL']
+                                }
+                            ]
+                        }
+                    );
 
-                    msg.guild.channels
-                    .create(disciplina.nome, {
-                        type: 'voice',
-                        parent: category.id,
-                        permissionOverwrites: [
-                            {
-                                id: role,
-                                allow: ['VIEW_CHANNEL']
-                            }
-                        ]
-                    });
+                    msg.guild.channels.create(
+                        disciplina.nome,
+                        {
+                            type: 'voice',
+                            parent: category.id,
+                            permissionOverwrites: [
+                                {
+                                    id: role,
+                                    allow: ['VIEW_CHANNEL']
+                                }
+                            ]
+                        }
+                    );
 
                 });
 
             });
 
         });
-
-        
+       
     });
 
 }

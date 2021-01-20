@@ -28,3 +28,7 @@ function deletarCanaisDasDisciplinas() {
     rolesDisciplinas.forEach(role => role.delete());
 
 }
+
+function isAdministrator(member) {
+    return member.hasPermission('ADMINISTRATOR');
+}

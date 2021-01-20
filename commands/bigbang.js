@@ -1,12 +1,26 @@
 exports.run = (client, msg, args) => {
 
+    if (isAdministrator(msg.member)) {
+        criarCanaisDasDisciplinas();
+    } else {
+        msg.channel.send(`I’m sorry ${msg.member}, I’m afraid I can’t do that`);
+    }
+
+}
+
+function criarCanaisDasDisciplinas() {
+
     let semestres = require("./semestres.json");
 
     semestres.forEach(semestre => {
         
         msg.guild.channels
-        .create(semestre.nome, {type: "category"})
-        .then(category => {
+        .create(
+            semestre.nome,
+            {
+                type: "category"
+            }
+        ).then(category => {
 
             semestre.disciplinas.forEach(disciplina => {
 
@@ -54,4 +68,8 @@ exports.run = (client, msg, args) => {
        
     });
 
+}
+
+function isAdministrator(member) {
+    return member.hasPermission('ADMINISTRATOR');
 }

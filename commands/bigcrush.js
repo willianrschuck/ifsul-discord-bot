@@ -1,12 +1,22 @@
 exports.run = (client, msg, args) => {
 
+    if (isAdministrator(msg.member)) {
+        deletarCanaisDasDisciplinas();
+    } else {
+        msg.channel.send(`I’m sorry ${msg.member}, I’m afraid I can’t do that`);
+    }
+
+}
+
+function deletarCanaisDasDisciplinas() {
+
     let semestres = require("./semestres.json");
+
     let arrayNomesSemestres = semestres.map(semestre => semestre.nome);
     let arrayNomesRoles = [].concat.apply([], semestres.map(semestre => semestre.disciplinas.map(disciplina => disciplina.sigla)));
 
     let categoriasSemestre =
-        msg.guild.channels.cache
-        .filter(channel => arrayNomesSemestres.includes(channel.name) && channel.type == "category");
+        msg.guild.channels.cache.filter(channel => arrayNomesSemestres.includes(channel.name) && channel.type == "category");
 
     let idsCanaisSemestres = categoriasSemestre.map(channel => channel.id);
 
@@ -15,8 +25,6 @@ exports.run = (client, msg, args) => {
 
     canaisDisciplinas.forEach(canal => canal.delete());
     categoriasSemestre.forEach(canal => canal.delete());
-
-
     rolesDisciplinas.forEach(role => role.delete());
 
 }

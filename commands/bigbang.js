@@ -1,14 +1,14 @@
 exports.run = (client, msg, args) => {
 
     if (isAdministrator(msg.member)) {
-        criarCanaisDasDisciplinas();
+        criarCanaisDasDisciplinas(msg);
     } else {
         msg.channel.send(`I’m sorry ${msg.member}, I’m afraid I can’t do that`);
     }
 
 }
 
-function criarCanaisDasDisciplinas() {
+function criarCanaisDasDisciplinas(msg) {
 
     let semestres = require("./semestres.json");
 

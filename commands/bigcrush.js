@@ -1,14 +1,14 @@
 exports.run = (client, msg, args) => {
 
     if (isAdministrator(msg.member)) {
-        deletarCanaisDasDisciplinas();
+        deletarCanaisDasDisciplinas(msg);
     } else {
         msg.channel.send(`I’m sorry ${msg.member}, I’m afraid I can’t do that`);
     }
 
 }
 
-function deletarCanaisDasDisciplinas() {
+function deletarCanaisDasDisciplinas(msg) {
 
     let semestres = require("./semestres.json");
 

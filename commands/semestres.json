@@ -1,7 +1,7 @@
 [
     {
         "nome": "1º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#DCDC24",
         "disciplinas": [
             {
                 "nome": "Criação de Páginas WEB",
@@ -31,7 +31,7 @@
     },
     {
         "nome": "2º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#7FD041",
         "disciplinas": [
             {
                 "nome": "Algoritmos 2",
@@ -61,7 +61,7 @@
     },
     {
         "nome": "3º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#2AB0BF",
         "disciplinas": [
             {
                 "nome": "Arquitetura de Computadores 2",
@@ -91,7 +91,7 @@
     },
     {
         "nome": "4º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#5243DE",
         "disciplinas": [
             {
                 "nome": "Análise e Projeto de Sistemas",
@@ -125,7 +125,7 @@
     },
     {
         "nome": "5º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#C82553",
         "disciplinas": [
             {
                 "nome": "Álgebra Linear e Geometria Analítica",
@@ -155,7 +155,7 @@
     },
     {
         "nome": "6º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#BC0F0F",
         "disciplinas": [
             {
                 "nome": "Análise e Complexidade de Algoritmos",
@@ -185,7 +185,7 @@
     },
     {
         "nome": "7º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#644B36",
         "disciplinas": [
             {
                 "nome": "Compiladores",
@@ -215,7 +215,7 @@
     },
     {
         "nome": "8º Semestre",
-        "cor": "#aa2ad1",
+        "cor": "#E6FF08",
         "disciplinas": [
             {
                 "nome": "Eletiva 1",

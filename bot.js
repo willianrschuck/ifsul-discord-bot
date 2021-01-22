@@ -25,8 +25,17 @@ client.on('message', (msg) => {
 
 });
 
+client.on("voiceStateUpdate", (oldVoiceState, newVoiceState) => {
+    if (newVoiceState.channel) {
+        client.commands.get('criarsala').onUserConnect(client, newVoiceState);
+    } else if (oldVoiceState.channel) {
+        client.commands.get('criarsala').onUserDisconnect(client, oldVoiceState);
+    };
+}); 
+
 client.on('ready', () => {
     console.log('The Bot is ready.');
+    client.user.setActivity('Hello, Dave.',);
 });
 
 function isValidCommand(msg) {

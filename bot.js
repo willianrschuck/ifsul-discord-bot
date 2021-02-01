@@ -5,46 +5,15 @@ const {token, prefix} = require('./config.json');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
+client.prefix = prefix;
+
 loadCommands();
-
-client.on('message', (msg) => {
-
-    if (isValidCommand(msg)) {
-
-        const args = extractArgs(msg);
-        const command = args.shift().toLowerCase();
-
-        const cmd = client.commands.get(command);
-
-        if (cmd) {
-            msg.delete({ timeout: 2000 });
-            cmd.run(client, msg, args);
-        }
-
-    }
-
-});
-
-client.on("voiceStateUpdate", (oldVoiceState, newVoiceState) => {
-    if (newVoiceState.channel) {
-        client.commands.get('criarsala').onUserConnect(client, newVoiceState);
-    } else if (oldVoiceState.channel) {
-        client.commands.get('criarsala').onUserDisconnect(client, oldVoiceState);
-    };
-}); 
+loadEvents();
 
 client.on('ready', () => {
     console.log('The Bot is ready.');
-    client.user.setActivity('Hello, Dave.',);
+    client.user.setActivity('Hello, Dave.');
 });
-
-function isValidCommand(msg) {
-    return msg.guild && !msg.author.bot && msg.content.indexOf(prefix) === 0;
-}
-
-function extractArgs(msg) {
-    return msg.content.slice(prefix.length).trim().split(/ +/g);
-}
 
 function loadCommands() {
 
@@ -64,6 +33,30 @@ function loadCommands() {
             console.log(`Tentando carregar o comando ${commandName}`);
 
             client.commands.set(commandName, commandFunction);
+
+        });
+
+    });
+
+}
+
+function loadEvents() {
+
+    fs.readdir('./events/', (err, files) => {
+
+        if (err)
+            return console.error(err);
+
+        files.forEach(filename => {
+
+            const eventObj = require(`./events/${filename}`);
+            let eventName = filename.split('.')[0];
+
+            console.log(`Tentando carregar o evento ${eventName}`);
+
+            // .bind(...) serve para mudar o contexto do 'this', mas no caso ele é usado para
+            // passar o client para todos os eventos como o primeiro parâmetro
+            client.on(eventName, eventObj.run.bind(null, client)); 
 
         });
 

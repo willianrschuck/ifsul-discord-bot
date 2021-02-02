@@ -10,7 +10,7 @@ exports.run = (client, msg) => {
         const cmd = client.commands.get(command);
 
         if (cmd) {
-            msg.delete({ timeout: 2000 });
+            msg.delete({ timeout: 3300 });
             cmd.run(client, msg, args);
         }
 

@@ -2,30 +2,34 @@ const semestres = require('./semestres.json')
 
 exports.run = (client, msg, args) => {
 
-    let resposta = '';
+    if (msg.channel.id == '751585982977146961') {
 
-    semestres.forEach(semestre => {
+        let resposta = '';
 
-        resposta += `▬▬ **${semestre.nome}** ▬▬\n`;
+        semestres.forEach(semestre => {
 
-        semestre.disciplinas.forEach(disciplina => {
-            resposta += `**\`${disciplina.sigla}\`** - ${disciplina.nome}\n`;
+            resposta += `▬▬ **${semestre.nome}** ▬▬\n`;
+
+            semestre.disciplinas.forEach(disciplina => {
+                resposta += `**\`${disciplina.sigla}\`** - ${disciplina.nome}\n`;
+            });
+
+            if (resposta.length > 1000) {
+                msg.channel
+                .send(resposta)
+                .then(mensagem => mensagem.delete({ timeout: 60 * 1000 }));
+                resposta = '';
+            }
+
         });
 
-        if (resposta.length > 1000) {
+        if (resposta.length != 0) {
             msg.channel
             .send(resposta)
             .then(mensagem => mensagem.delete({ timeout: 60 * 1000 }));
             resposta = '';
         }
 
-    });
-
-    if (resposta.length != 0) {
-        msg.channel
-        .send(resposta)
-        .then(mensagem => mensagem.delete({ timeout: 60 * 1000 }));
-        resposta = '';
     }
 
 }

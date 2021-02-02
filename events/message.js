@@ -2,6 +2,8 @@ exports.run = (client, msg) => {
 
     if (isValidCommand(client, msg)) {
 
+        console.log(`${msg.member.nickname}: ${msg.content}`);
+
         const args = extractArgs(client.prefix, msg);
         const command = args.shift().toLowerCase();
 

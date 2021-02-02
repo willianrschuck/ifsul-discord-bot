@@ -3,7 +3,7 @@ const siglasDisciplianas = [].concat.apply([], semestres.map(semestre => semestr
 
 exports.run = (client, msg, args) => {
 
-    if (msg.channel.id != '751585982977146961') {
+    if (msg.channel.id == '751585982977146961') {
         
         args = args.map(arg => arg.toUpperCase());
         let roles = msg.guild.roles.cache.filter(role => {

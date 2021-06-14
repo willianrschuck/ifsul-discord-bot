@@ -2,7 +2,7 @@ exports.run = (client, msg) => {
 
     if (isValidCommand(client, msg)) {
 
-        console.log(`${msg.member.nickname}: ${msg.content}`);
+        log(client, msg);
 
         const args = extractArgs(client.prefix, msg);
         const command = args.shift().toLowerCase();
@@ -16,6 +16,11 @@ exports.run = (client, msg) => {
 
     }
 
+}
+
+function log(client, msg) {
+    const channel = client.channels.cache.find(channel => channel.id == 854006348893913128);
+    channel.send(`${msg.member.nickname}: ${msg.content}`);
 }
 
 function isValidCommand(client, msg) {

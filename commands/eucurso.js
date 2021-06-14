@@ -15,7 +15,7 @@ exports.run = (client, msg, args) => {
 
             let disciplinasNaoEncontradas = args.filter(sigla => !rolesName.includes(sigla));
             msg.channel.send(`${msg.member}, não consegui encontrar nenhuma disciplina que se chamasse: ${disciplinasNaoEncontradas.join(', ')}`)
-            .then(mensagem => mensagem.delete({ timeout: 60 * 1000 }));
+            .then(mensagem => mensagem.delete({ timeout: 20 * 1000 }));
 
         }
         
@@ -26,7 +26,7 @@ exports.run = (client, msg, args) => {
             });
 
             msg.channel.send(`${msg.member}, você agora tem acesso a ${rolesName.join(', ')}`)
-            .then(mensagem => mensagem.delete({ timeout: 60 * 1000 }));
+            .then(mensagem => mensagem.delete({ timeout: 20 * 1000 }));
 
         }
 

@@ -18,13 +18,20 @@ exports.run = (client, msg, args) => {
 
 async function createChannels(msg, channelName) {
 
+    let roleAluno = msg.guild.roles.cache.find(role => role.name === 'Aluno');
+    let roleProfessor = msg.guild.roles.cache.find(role => role.name === 'Professor');
+
     let promiseVoiceChannel = msg.guild.channels.create(
         channelName, {
         type: 'voice',
         parent: categoryId,
         permissionOverwrites: [
             {
-                id: msg.author.id,
+                id: roleAluno,
+                allow: ['VIEW_CHANNEL']
+            },
+            {
+                id: roleProfessor,
                 allow: ['VIEW_CHANNEL']
             }
         ]
@@ -36,7 +43,11 @@ async function createChannels(msg, channelName) {
         parent: categoryId,
         permissionOverwrites: [
             {
-                id: msg.author.id,
+                id: roleAluno,
+                allow: ['VIEW_CHANNEL']
+            },
+            {
+                id: roleProfessor,
                 allow: ['VIEW_CHANNEL']
             }
         ]

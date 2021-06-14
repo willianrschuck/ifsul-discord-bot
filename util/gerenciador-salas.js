@@ -35,7 +35,7 @@ function createTimeout(obj) {
     obj.timeout = setTimeout(() => { 
         obj.voiceChannel.delete();
         obj.textChannel.delete();
-    }, 5 * 1000);
+    }, 60 * 1000);
 }
 
 function onUserConnect(channel) {

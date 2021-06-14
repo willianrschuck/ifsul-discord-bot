@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const {token, prefix} = require('./config.json');
+const {prefix} = require('./config.json');
+const keepAlive = require('./web-server.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -64,4 +65,6 @@ function loadEvents() {
 
 }
 
-client.login(token);
+client.login(process.env.TOKEN);
+
+keepAlive();

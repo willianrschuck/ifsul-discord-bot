@@ -244,6 +244,10 @@
             {
                 "nome": "Serviços WEB",
                 "sigla": "SW"
+            },
+            {
+                "nome": "Programação para WEB 2",
+                "sigla": "PW2"
             }
         ]
     }

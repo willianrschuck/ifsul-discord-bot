@@ -1,8 +1,12 @@
+const { handleMessage } = require('../util/registration')
+
 exports.run = (client, msg) => {
+
+    handleMessage(msg);
 
     if (isValidCommand(client, msg)) {
 
-        log(client, msg);
+        log(msg);
 
         const args = extractArgs(client.prefix, msg);
         const command = args.shift().toLowerCase();
@@ -18,9 +22,8 @@ exports.run = (client, msg) => {
 
 }
 
-function log(client, msg) {
-    const channel = client.channels.cache.find(channel => channel.id == 854006348893913128);
-    channel.send(`${msg.member.nickname}: ${msg.content}`);
+function log(msg) {
+    msg.channel.send(`${msg.member.nickname || msg.member.user.username}: ${msg.content}`);
 }
 
 function isValidCommand(client, msg) {

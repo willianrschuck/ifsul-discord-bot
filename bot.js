@@ -1,12 +1,11 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const {prefix} = require('./config.json');
 const keepAlive = require('./web-server.js');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
-client.prefix = prefix;
+client.prefix = "!";
 
 loadCommands();
 loadEvents();
